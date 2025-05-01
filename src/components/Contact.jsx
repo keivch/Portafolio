@@ -16,7 +16,7 @@ export default function Contact() {
         <div className="flex items-center gap-2">
           <FaLinkedin />
           <a
-            href="www.linkedin.com/in/sebastian-scarpetta-developer"
+            href="https://www.linkedin.com/in/sebastian-scarpetta-developer"
             target="_blank"
             rel="noopener noreferrer"
             className="underline hover:text-blue-600 transition-colors"
