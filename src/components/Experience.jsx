@@ -1,36 +1,85 @@
-const proyectos = [
-    {
-      titulo: "Nicelook",
-      imagen: '../assets/Nicelook.png', // asegúrate de tener esta imagen en `public/assets/`
-      descripcion: "Desarrollo del backend de una aplicación web completa parala gestión integral de la peluquería Stylos (Palmira). UtilizandoPython, Django y PostgreSQL, construí una API RESTful robusta para gestionar el calendario de citas, el inventario deproductos, la nómina de empleados y los reportes financieros",
-    },
-    {
-      titulo: "Afh-metalmecanico",
-      imagen: '../assets/afh.png',
-      descripcion: "Sistema web para la empresa AFH-Metalmecanicos, trabaje en la construccionde una API RESTful, para el manejo del inventariado de herramientas y un sistema completo de solicitudes de retiro de herramientas (creando archivos pdf)",
-    },
-    {
-      titulo: "Sistema para bomberos",
-      imagen: '../assets/bomberitos.png',
-      descripcion: "Participe del desarrollo de una aplicacion para los bomberos de mi ciudad, donde se lleva el registro de horas trabajadas por cada bombero, se registran por medio de qr o huellas digitales (se uso Springboot como micro servicio para el sistema de huella digital)",
-    },
-  ];
+import nicelook from "../assets/niceloook.png";
+import bomberos from "../assets/bomberos.png";
+import afh from "../assets/afh2.png";
+import { useState } from "react";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
-  export default function Experience(){
-    return(
-        <section className="px-6 py-8 bg-blue-50">
-      <h2 className="text-2xl font-semibold text-blue-700 mb-6 text-center">Experiencia y Proyectos</h2>
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {proyectos.map((proyecto, index) => (
-          <div key={index} className="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-            <img src={proyecto.imagen} alt={proyecto.titulo} className="w-full h-48 object-cover" />
-            <div className="p-4">
-              <h3 className="text-lg font-bold text-blue-800">{proyecto.titulo}</h3>
-              <p className="text-gray-700 mt-2">{proyecto.descripcion}</p>
-            </div>
+
+const proyectos = [
+  {
+    titulo: "Nicelook",
+    imagen: nicelook,
+    descripcion:
+      "Desarrollo del backend de una aplicación web completa para la gestión integral de la peluquería Stylos (Palmira). Utilizando Python, Django y PostgreSQL, construí una API RESTful robusta para gestionar el calendario de citas, el inventario de productos, la nómina de empleados y los reportes financieros.",
+  },
+  {
+    titulo: "Afh-metalmecanico",
+    imagen: afh,
+    descripcion:
+      "Sistema web para la empresa AFH-Metalmecánicos. Trabajé en la construcción de una API RESTful para el manejo del inventariado de herramientas y un sistema completo de solicitudes de retiro de herramientas, incluyendo generación de archivos PDF.",
+  },
+  {
+    titulo: "Sistema para bomberos",
+    imagen: bomberos,
+    descripcion:
+      "Participé en el desarrollo de una aplicación para los bomberos de mi ciudad. El sistema registra horas trabajadas por bombero mediante QR o huella digital (se usó Spring Boot como microservicio para el sistema de huella digital).",
+  },
+];
+
+export default function Experience() {
+  const [actual, setActual] = useState(0);
+  const [showModal, setShowModal] = useState(false);
+  const [modalImage, setModalImage] = useState(null);
+
+  const siguiente = () => setActual((prev) => (prev + 1) % proyectos.length);
+  const anterior = () =>
+    setActual((prev) => (prev - 1 + proyectos.length) % proyectos.length);
+
+  return (
+    <section className="bg-[#5C6B73] text-white py-10 px-4">
+      <h2 className="text-2xl font-bold text-center mb-8">
+        Experiencia y Proyectos
+      </h2>
+
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8">
+        <button onClick={anterior} className="text-3xl hover:text-[#E0E1DD]">
+          <FaChevronLeft />
+        </button>
+
+        <div className="flex flex-col md:flex-row items-center bg-white text-[#253237] rounded-xl overflow-hidden shadow-lg w-full">
+          <img
+            src={proyectos[actual].imagen}
+            alt={proyectos[actual].titulo}
+            className="w-full md:w-[500px] h-auto max-h-[350px] object-cover cursor-pointer transition-transform duration-300 hover:scale-105"
+            onClick={() => {
+              setModalImage(proyectos[actual].imagen);
+              setShowModal(true);
+            }}
+          />
+          <div className="p-6 max-w-xl">
+            <h3 className="text-xl font-bold mb-2">
+              {proyectos[actual].titulo}
+            </h3>
+            <p className="text-base">{proyectos[actual].descripcion}</p>
           </div>
-        ))}
+        </div>
+
+        <button onClick={siguiente} className="text-3xl hover:text-[#E0E1DD]">
+          <FaChevronRight />
+        </button>
       </div>
+      {showModal && (
+  <div
+    className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
+    onClick={() => setShowModal(false)}
+  >
+    <img
+      src={modalImage}
+      alt="Imagen ampliada"
+      className="max-w-full max-h-full rounded-lg shadow-xl"
+    />
+  </div>
+)}
     </section>
-    );
-  }
+  );
+}
