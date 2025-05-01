@@ -14,7 +14,6 @@ export default function Header(){
             eficientes, escalables y de alta calidad, utilizando
             tecnologías modernas y las mejores prácticas de la
             industria.
-
             </p>
         </header>
         
