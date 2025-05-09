@@ -1,4 +1,4 @@
-import { FaReact, FaPython, FaDocker, FaDatabase, FaJava, FaAmazon, FaNodeJs } from "react-icons/fa";
+import { FaReact, FaPython, FaDocker, FaDatabase, FaJava, FaAmazon, FaNodeJs, FaGithub, FaFlask, FaHtml5 } from "react-icons/fa";
 import { SiTailwindcss, SiJavascript, SiKotlin, SiDjango} from "react-icons/si";
 
 export default function Technologies(){
@@ -13,7 +13,10 @@ export default function Technologies(){
         { nombre: "Bases de datos (Postgrest, SQLite, MariaDB, MongoDB)", icono: <FaDatabase /> },
         {nombre: "Java - SpringBoot", icono: <FaJava/> },
         {nombre: "AWS - EC2", icono: <FaAmazon/>},
-        {nombre: "NodeJs", icono: <FaNodeJs/>}
+        {nombre: "NodeJs", icono: <FaNodeJs/>},
+        {nombre: "Github", icono: <FaGithub/> },
+        {nombre: "Html", icono: <FaHtml5/> },
+        {nombre: "Flask", icono: <FaFlask/> },
       ];
       return (
         <section className=" text-white py-8 px-6">
