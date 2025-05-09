@@ -11,18 +11,21 @@ const proyectos = [
     imagen: nicelook,
     descripcion:
       "Desarrollo del backend de una aplicación web completa para la gestión integral de la peluquería Stylos (Palmira). Utilizando Python, Django y PostgreSQL, construí una API RESTful robusta para gestionar el calendario de citas, el inventario de productos, la nómina de empleados y los reportes financieros.",
+      link: 'https://github.com/juanpalacios20/backend_nicelook.git'
   },
   {
     titulo: "Afh-metalmecanico",
     imagen: afh,
     descripcion:
       "Sistema web para la empresa AFH-Metalmecánicos. Trabajé en la construcción de una API RESTful para el manejo del inventariado de herramientas y un sistema completo de solicitudes de retiro de herramientas, incluyendo generación de archivos PDF.",
+      link: 'https://github.com/keivch/Back_Afh.git'
   },
   {
     titulo: "Sistema para bomberos",
     imagen: bomberos,
     descripcion:
       "Participé en el desarrollo de una aplicación para los bomberos de mi ciudad. El sistema registra horas trabajadas por bombero mediante QR o huella digital (se usó Spring Boot como microservicio para el sistema de huella digital).",
+      link: 'https://github.com/Skx18/bomberos_flask.git'
   },
 ];
 
@@ -61,6 +64,8 @@ export default function Experience() {
               {proyectos[actual].titulo}
             </h3>
             <p className="text-base">{proyectos[actual].descripcion}</p>
+            <h4 className="font-semibold">Link:</h4>
+            <a href={proyectos[actual].link} target="_blank" className="underline hover:text-blue-600 transition-colors">{proyectos[actual].link}</a>
           </div>
         </div>
 
