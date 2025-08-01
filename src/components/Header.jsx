@@ -11,7 +11,7 @@ export default function Header(){
         "Desarrollador Full Stack",
         "Desarrollador Backend",
         "Desarrollador Frontend",
-        "Desarrolador web"
+        "Desarrollador web"
     ];
 
     const skills = [
