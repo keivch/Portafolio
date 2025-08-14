@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { FaReact, FaPython, FaDocker, FaDatabase, FaJava, FaAmazon, FaNodeJs, FaGithub, FaFlask, FaHtml5, FaAngular } from "react-icons/fa";
-import { SiTailwindcss, SiJavascript, SiKotlin, SiDjango} from "react-icons/si";
+import { SiTailwindcss, SiJavascript, SiKotlin, SiDjango, SiNextui} from "react-icons/si";
 
 export default function Technologies(){
     const [hoveredTech, setHoveredTech] = useState(null);
@@ -96,6 +96,12 @@ export default function Technologies(){
             nombre: "Angular", 
             icono: <FaAngular/>, 
             color: "from-red-500 to-red-700",
+            categoria: "Frontend"
+        },
+        {
+            nombre: 'Next.js',
+            icono: <SiNextui/>,
+            color: "from-blue-500 to-blue-700",
             categoria: "Frontend"
         }
     ];
