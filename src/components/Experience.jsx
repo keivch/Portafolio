@@ -3,10 +3,19 @@ import { FaChevronLeft, FaChevronRight, FaExternalLinkAlt, FaEye, FaTimes } from
 import nicelook from "../assets/niceloook.png";
 import bomberos from "../assets/bomberos.png";
 import afh from "../assets/afh2.png";
+import landing from "../assets/afhlanding.png"
 
 // Simulando las imágenes con placeholders coloridos
 
 const proyectos = [
+  {
+    titulo: "AFH - Landing page",
+    imagen: landing,
+    descripcion:
+      "Diseño y desarrollo de la pagina corporativa para la empresa afh metalmecanicos.",
+    link: 'https://www.afhmetalmecanico.com/',
+    tecnologias: ['Next js']
+  },
   {
     titulo: "Nicelook",
     imagen: nicelook,
@@ -31,6 +40,7 @@ const proyectos = [
     link: 'https://github.com/Skx18/bomberos_flask.git',
     tecnologias: ['Spring Boot', 'Flask', 'QR', 'Biometría']
   },
+
 ];
 
 export default function Experience() {
@@ -69,27 +79,26 @@ export default function Experience() {
         <div className="relative">
           {/* Navegación móvil en la parte superior */}
           <div className="flex justify-between items-center mb-8 md:hidden">
-            <button 
-              onClick={anterior} 
+            <button
+              onClick={anterior}
               className="bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full p-3 transition-all duration-300 hover:scale-110"
             >
               <FaChevronLeft className="text-xl" />
             </button>
-            
+
             <div className="flex space-x-2">
               {proyectos.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setActual(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index === actual ? 'bg-blue-400 scale-125' : 'bg-white/30'
-                  }`}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${index === actual ? 'bg-blue-400 scale-125' : 'bg-white/30'
+                    }`}
                 />
               ))}
             </div>
-            
-            <button 
-              onClick={siguiente} 
+
+            <button
+              onClick={siguiente}
               className="bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full p-3 transition-all duration-300 hover:scale-110"
             >
               <FaChevronRight className="text-xl" />
@@ -99,8 +108,8 @@ export default function Experience() {
           {/* Contenedor principal del carrusel */}
           <div className="flex items-center justify-center gap-4 md:gap-8">
             {/* Botón anterior (desktop) */}
-            <button 
-              onClick={anterior} 
+            <button
+              onClick={anterior}
               className="hidden md:flex bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full p-4 transition-all duration-300 hover:scale-110"
             >
               <FaChevronLeft className="text-2xl" />
@@ -132,7 +141,7 @@ export default function Experience() {
                     <h3 className="text-2xl lg:text-3xl font-bold mb-4 text-white">
                       {proyectos[actual].titulo}
                     </h3>
-                    
+
                     <p className="text-slate-300 text-base lg:text-lg leading-relaxed mb-6">
                       {proyectos[actual].descripcion}
                     </p>
@@ -159,14 +168,14 @@ export default function Experience() {
                       <h4 className="text-sm font-semibold text-slate-400 uppercase tracking-wide">
                         Repositorio
                       </h4>
-                      <a 
-                        href={proyectos[actual].link} 
-                        target="_blank" 
+                      <a
+                        href={proyectos[actual].link}
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg"
                       >
                         <FaExternalLinkAlt className="text-sm" />
-                        Ver en GitHub
+                        Link
                       </a>
                     </div>
                   </div>
@@ -175,8 +184,8 @@ export default function Experience() {
             </div>
 
             {/* Botón siguiente (desktop) */}
-            <button 
-              onClick={siguiente} 
+            <button
+              onClick={siguiente}
               className="hidden md:flex bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full p-4 transition-all duration-300 hover:scale-110"
             >
               <FaChevronRight className="text-2xl" />
@@ -189,11 +198,10 @@ export default function Experience() {
               <button
                 key={index}
                 onClick={() => setActual(index)}
-                className={`w-4 h-4 rounded-full transition-all duration-300 ${
-                  index === actual 
-                    ? 'bg-gradient-to-r from-blue-400 to-purple-400 scale-125' 
-                    : 'bg-white/30 hover:bg-white/50'
-                }`}
+                className={`w-4 h-4 rounded-full transition-all duration-300 ${index === actual
+                  ? 'bg-gradient-to-r from-blue-400 to-purple-400 scale-125'
+                  : 'bg-white/30 hover:bg-white/50'
+                  }`}
               />
             ))}
           </div>
