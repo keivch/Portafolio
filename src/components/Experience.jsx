@@ -4,6 +4,7 @@ import nicelook from "../assets/niceloook.png";
 import bomberos from "../assets/bomberos.png";
 import afh from "../assets/afh2.png";
 import landing from "../assets/afhlanding.png"
+import diepal from "../assets/diepal.png"
 
 // Simulando las imágenes con placeholders coloridos
 
@@ -39,6 +40,14 @@ const proyectos = [
       "Participé en el desarrollo de una aplicación para los bomberos de mi ciudad. El sistema registra horas trabajadas por bombero mediante QR o huella digital (se usó Spring Boot como microservicio para el sistema de huella digital).",
     link: 'https://github.com/Skx18/bomberos_flask.git',
     tecnologias: ['Spring Boot', 'Flask', 'QR', 'Biometría']
+  },
+  {
+    titulo: "Pagina web Diepal",
+    imagen: diepal,
+    descripcion:
+      "Realicé el mantenimiento, actualización y optimización del sitio web institucional de DIEPAL. Me encargué de organizar y actualizar contenidos, implementar ajustes personalizados en WordPress, Elementor y CSS, y mejorar el rendimiento, la accesibilidad y el SEO del sitio para garantizar una experiencia rápida, clara y responsive para los usuarios.",
+    link: 'https://diepal.palmira.unal.edu.co/',
+    tecnologias: ['Wordpress']
   },
 
 ];
